@@ -1,6 +1,7 @@
 import express from "express";
 import "dotenv/config";
 import goalsRouter from "./routes/goalsRoutes.js";
+import usersRouter from "./routes/userRoutes.js";
 import { errorHandler } from "./middlewares/errorMiddleware.js";
 import connectDB from "./config/db.js";
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/goals", goalsRouter);
+app.use("/api/users", usersRouter);
 
 app.use(errorHandler);
 
