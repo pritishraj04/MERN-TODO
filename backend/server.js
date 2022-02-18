@@ -1,7 +1,10 @@
 import express from "express";
-import goalsRouter from "./routes/goalsRoutes.js";
-import { errorHandler } from "./middleware/errorMiddleware.js";
 import "dotenv/config";
+import goalsRouter from "./routes/goalsRoutes.js";
+import { errorHandler } from "./middlewares/errorMiddleware.js";
+import connectDB from "./config/db.js";
+
+connectDB();
 
 const port = process.env.PORT || 5500;
 
